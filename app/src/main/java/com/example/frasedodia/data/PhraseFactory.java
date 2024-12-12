@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class PhraseFactory {
     private static PhraseFactory _instance;
     private int _previousRandomIndexUsed = -1;
-    private ArrayList<Phrase> _phrases = new ArrayList<>();
+    private final ArrayList<Phrase> _phrases = new ArrayList<>();
     private PhraseFactory() {}
     public static PhraseFactory getInstance() {
         if (_instance == null)

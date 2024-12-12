@@ -12,7 +12,7 @@ import com.example.frasedodia.data.PhraseFactory;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ArrayList<String> phrases = new ArrayList<>() {{
+    private final ArrayList<String> _phrases = new ArrayList<>() {{
         add("O único lugar onde o sucesso vem antes do trabalho é no dicionário.");
         add("Acredite em si mesmo e tudo será possível.");
         add("Grandes conquistas começam com pequenos passos.");
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.phraseFactory.add(this.phrases);
+        this.phraseFactory.add(this._phrases);
         setContentView(R.layout.activity_main);
 
         Button button = findViewById(R.id.button);
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> everyPhraseAdapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
-                phrases
+                _phrases
         );
         everyPhrase.setAdapter(everyPhraseAdapter);
 
